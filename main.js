@@ -122,7 +122,7 @@ $(document).ready(function(){
     });
 
     $("#clear").click(function(){ 
-        document.getElementById("solution").innerHTML = "Solution";
+        document.getElementById("solution").innerHTML = "Calculator";
         input = "";
     });
 
