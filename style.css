@@ -1,12 +1,16 @@
 .row .col{
-    border: 1px solid black;
+    border: 1.2px solid rgb(85, 85, 85);
     border-radius: 5px;
+
+    color:rgb(0, 0, 0);
 
     text-align: center;
 }
 
 
 #calc{
-    width: 30%;
-    margin-top: 250px;
+    background-color: rgb(187, 232, 250);
+    width: 25%;
+    margin-top: 50px;
 }
+

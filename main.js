@@ -4,44 +4,69 @@ function addString(input){
 
 function doMath(input){
 
-    
-    var left = "";
-    var right = "";
-    var solution = "";
+    var trig = input[0] + input[1] + input[2];
 
-    var count = -1;
+    if(trig !== "sin" && trig!== "cos" && trig!== "tan"){
+        var left = "";
+        var right = "";
+        var solution = "";
+
+        var count = -1;
 
 
-    for(i=0; i<input.length; i++){
-        left = left + input[i];
-        count++;
+        for(i=0; i<input.length; i++){
+            left = left + input[i];
+            count++;
 
-        if(input[i] == "x" || input[i] == "/" || input[i] == "+" || input[i] == "-")
-            i = 100;
+            if(input[i] == "x" || input[i] == "/" || input[i] == "+" || input[i] == "-")
+                i = 100;
+        }
+
+        for(i=count+1; i<input.length; i++){
+            right = right + input[i];
+        }
+
+
+        left = parseFloat(left);
+        
+        right = parseFloat(right);
+
+
+        if(input[count] == "x")
+            solution = left * right;
+        
+        else if(input[count] == "/")
+            solution = left / right;
+        
+        else if(input[count] == "+")
+            solution = left + right;
+        
+        else 
+            solution = left - right;
+
     }
-
-    for(i=count+1; i<input.length; i++){
-        right = right + input[i];
-    }
-
-
-    left = parseFloat(left);
-
   
-    right = parseFloat(right);
 
+    else{
+       
+        var value = "";
 
-    if(input[count] == "x"){
-        solution = left * right;
-    }
-    if(input[count] == "/"){
-        solution = left / right;
-    }
-    if(input[count] == "+"){
-        solution = left + right;
-    }
-    if(input[count] == "-"){
-        solution = left - right;
+        for(i=4; i<input.length-1; i++){
+            value = value + input[i];
+        }
+
+        value = parseFloat(value);
+
+        if(trig==="sin")
+            value = Math.sin(value);
+        else if (trig==="cos")
+            value = Math.cos(value);
+        else
+            value = Math.tan(value);
+        
+        
+        solution = value;
+
     }
 
     return solution; 
@@ -74,9 +99,31 @@ $(document).ready(function(){
 
     $("#period").click(function(){input = input + "."; addString(input);});
 
+  
+
+
+    $("#sin").click(function(){
+        input = "sin(" + input + ")";
+        document.getElementById("solution").innerHTML = input;
+    });
+    $("#cos").click(function(){
+        input = "cos(" + input + ")";
+        document.getElementById("solution").innerHTML = input;
+    });
+    $("#tan").click(function(){
+        input = "tan(" + input + ")";
+        document.getElementById("solution").innerHTML = input;
+    });
+
+
     $("#equals").click(function(){
         document.getElementById("solution").innerHTML = doMath(input);
         input = doMath(input).toString()
+    });
+
+    $("#clear").click(function(){ 
+        document.getElementById("solution").innerHTML = "Solution";
+        input = "";
     });
 
 
