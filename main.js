@@ -25,10 +25,10 @@ function doMath(input){
     }
 
 
-    left = parseInt(left);
+    left = parseFloat(left);
 
   
-    right = parseInt(right);
+    right = parseFloat(right);
 
 
     if(input[count] == "x"){
@@ -44,7 +44,8 @@ function doMath(input){
         solution = left - right;
     }
 
-    document.getElementById("solution").innerHTML = solution;
+    return solution; 
+
 
 
 }
@@ -66,16 +67,16 @@ $(document).ready(function(){
     $("#8").click(function(){input = input + "8"; addString(input);});
     $("#9").click(function(){input = input + "9"; addString(input);});
 
-    $("#mult").click(function(){input = input + "x"; addString(input); math = true; });
-    $("#div").click(function(){input = input + "/"; addString(input); math = true;  });
-    $("#plus").click(function(){input = input + "+"; addString(input); math = true; });
-    $("#minus").click(function(){input = input + "-"; addString(input); math = true;});
+    $("#mult").click(function(){input = input + "x"; addString(input); });
+    $("#div").click(function(){input = input + "/"; addString(input); });
+    $("#plus").click(function(){input = input + "+"; addString(input); });
+    $("#minus").click(function(){input = input + "-"; addString(input);});
 
     $("#period").click(function(){input = input + "."; addString(input);});
 
     $("#equals").click(function(){
-
-        doMath(input);
+        document.getElementById("solution").innerHTML = doMath(input);
+        input = doMath(input).toString()
     });
 
 
