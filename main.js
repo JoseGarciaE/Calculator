@@ -1,5 +1,5 @@
 function addString(input){
-    document.getElementById("solution").innerHTML = input;
+    document.querySelector("#solution").textContent = input;
 }
 
 function doMath(input){
@@ -77,67 +77,97 @@ function doMath(input){
 
 
 
-$(document).ready(function(){
+document.addEventListener("DOMContentLoaded", function() {
 
     var input = "";
 
-    $("#0").click(function(){input = input + "0"; addString(input);});
-    $("#1").click(function(){input = input + "1"; addString(input);});
-    $("#2").click(function(){input = input + "2"; addString(input);});
-    $("#3").click(function(){input = input + "3"; addString(input);});
-    $("#4").click(function(){input = input + "4"; addString(input);});
-    $("#5").click(function(){input = input + "5"; addString(input);});
-    $("#6").click(function(){input = input + "6"; addString(input);});
-    $("#7").click(function(){input = input + "7"; addString(input);});
-    $("#8").click(function(){input = input + "8"; addString(input);});
-    $("#9").click(function(){input = input + "9"; addString(input);});
+    document.querySelector("#num0").addEventListener("click", function(){
+        input += "0";
+        addString(input);
+    })
+    document.querySelector("#num1").addEventListener("click", function(){
+        input += "1";
+        addString(input);
+    })
+    document.querySelector("#num2").addEventListener("click", function(){
+        input += "2";
+        addString(input);
+    })
+    document.querySelector("#num3").addEventListener("click", function(){
+        input += "3";
+        addString(input);
+    })
+    document.querySelector("#num4").addEventListener("click", function(){
+        input += "4";
+        addString(input);
+    })
+    document.querySelector("#num5").addEventListener("click", function(){
+        input += "5";
+        addString(input);
+    })
+    document.querySelector("#num6").addEventListener("click", function(){
+        input += "6";
+        addString(input);
+    })
+    document.querySelector("#num7").addEventListener("click", function(){
+        input += "7";
+        addString(input);
+    })
+    document.querySelector("#num8").addEventListener("click", function(){
+        input += "8";
+        addString(input);
+    })
+    document.querySelector("#num9").addEventListener("click", function(){
+        input += "9";
+        addString(input);
+    })
 
-    $("#mult").click(function(){input = input + "x"; addString(input); });
-    $("#div").click(function(){input = input + "/"; addString(input); });
-    $("#plus").click(function(){input = input + "+"; addString(input); });
-    $("#minus").click(function(){input = input + "-"; addString(input);});
+    
+    document.querySelector("#mult").addEventListener("click", function(){
+        input += "x";
+        addString(input);
+    })
+    document.querySelector("#div").addEventListener("click", function(){
+        input += "/";
+        addString(input);
+    })
+    document.querySelector("#plus").addEventListener("click", function(){
+        input += "+";
+        addString(input);
+    })
+    document.querySelector("#minus").addEventListener("click", function(){
+        input += "-";
+        addString(input);
+    })
+    document.querySelector("#period").addEventListener("click", function(){
+        input += ".";
+        addString(input);
+    })
 
-    $("#period").click(function(){input = input + "."; addString(input);});
-
-  
 
 
-    $("#sin").click(function(){
+
+    document.querySelector("#sin").addEventListener("click", function(){
         input = "sin(" + input + ")";
-        document.getElementById("solution").innerHTML = input;
+        document.querySelector("#solution").textContent = input;
     });
-    $("#cos").click(function(){
+    document.querySelector("#cos").addEventListener("click", function(){
         input = "cos(" + input + ")";
-        document.getElementById("solution").innerHTML = input;
+        document.querySelector("#solution").textContent = input;
     });
-    $("#tan").click(function(){
+    document.querySelector("#tan").addEventListener("click", function(){
         input = "tan(" + input + ")";
-        document.getElementById("solution").innerHTML = input;
+        document.querySelector("#solution").textContent = input;
     });
 
-
-    $("#equals").click(function(){
-        document.getElementById("solution").innerHTML = doMath(input);
+    document.querySelector("#equals").addEventListener("click", function(){
+        document.querySelector("#solution").textContent = doMath(input);
         input = doMath(input).toString()
     });
 
-    $("#clear").click(function(){ 
-        document.getElementById("solution").innerHTML = "Calculator";
+    document.querySelector(".clear").addEventListener("click", function(){
+        document.querySelector("#solution").textContent = "Calculator";
         input = "";
     });
-
-    $("#clear").click(function(){ 
-        document.getElementById("solution").innerHTML = "Calculator";
-        input = "";
-    });
-     
-    $("#anotherClear").click(function(){ 
-        document.getElementById("solution").innerHTML = "Calculator";
-        input = "";
-    });
-
-
-
-
 
 });
