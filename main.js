@@ -126,6 +126,17 @@ $(document).ready(function(){
         input = "";
     });
 
+    $("#clear").click(function(){ 
+        document.getElementById("solution").innerHTML = "Calculator";
+        input = "";
+    });
+     
+    $("#anotherClear").click(function(){ 
+        document.getElementById("solution").innerHTML = "Calculator";
+        input = "";
+    });
+
+
 
 
 

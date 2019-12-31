@@ -12,51 +12,48 @@
     <title>Calculator</title>
   </head>
   <body>
-
-      <div id= "calc" class="container">
-        <div class="row">
-
-          <div id = "solution" class="col">Calculator</div>
-
-          <div class="w-100"></div>
-          <div id = "#" class="col"></div>
-          <div id = "#" class="col"></div>
-          <div id = "#" class="col"></div>
-          <div id = "clear" class="col">AC</div>
-
-          <div class="w-100"></div>
-          <div id = "sin" class="col">sin</div>
-          <div id = "7" class="col">7</div>
-          <div id = "8" class="col">8</div>
-          <div id = "9" class="col">9</div>
-          <div id = "mult" class="col">x</div>
-
-          <div class="w-100"></div>
-          <div id = "cos" class="col">cos</div>
-          <div id = "4" class="col">4</div>
-          <div id = "5" class="col">5</div>
-          <div id = "6" class="col">6</div>
-          <div id = "div" class="col">/</div>
-
-          <div class="w-100"></div>
-          <div id = "tan" class="col">tan</div>
-          <div id = "1" class="col">1</div>
-          <div id = "2" class="col">2</div>
-          <div id = "3" class="col">3</div>
-          <div id = "plus" class="col">+</div>
-
-          <div class="w-100"></div>
-          <div id = "arc" class="col"></div>
-          <div id = "0" class="col">0</div>
-          <div id = "period" class="col">.</div>
-          <div id=  "equals"   class="col">=</div>
-          <div id = "minus" class="col">-</div>
-
-        </div>
-      </div>
-
-
-
+    <div id="calculator">
+      <table>
+        <tr>
+          <th colspan="5" id="solution">Calculator</th>
+        </tr>
+        <tr>
+          <td><button>...</button></td>
+          <td><button>...</button></td>
+          <td><button>...</button></td>
+          <td><button>...</button></td>
+          <td id="clear"><button>AC</button></td>
+        </tr>
+        <tr>
+          <td id="sin"><button>sin</button></td>
+          <td id="7"  ><button>7</button></td>
+          <td id="8"  ><button>8</button></td>
+          <td id="9"  ><button>9</button></td>
+          <td id="mult"  ><button>x</button></td>
+        </tr>
+        <tr>
+          <td id="cos"><button>cos</button></td>
+          <td id="4"><button>4</button></td>
+          <td id="5"><button>5</button></td>
+          <td id="6"><button>6</button></td>
+          <td id="div"><button>/</button></td>
+        </tr>
+        <tr>
+          <td id="tan"><button>tan</button></td>
+          <td id="1"><button>1</button></td>
+          <td id="2"><button>2</button></td>
+          <td id="3"><button>3</button></td>
+          <td id="plus"><button>+</button></td>
+        </tr>
+        <tr>
+          <td id="anotherClear"><button>AC</button></td>
+          <td id="0"><button>0</button></td>
+          <td id="period"><button>.</button></td>
+          <td id="equals"><button>=</button></td>
+          <td id="minus"><button>-</button></td>
+        </tr>
+      </table>
+    </div>
 
 
     <!-- Optional JavaScript -->
@@ -65,5 +62,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="main.js"></script>
-</body>
+    
+  </body>
 </html>
