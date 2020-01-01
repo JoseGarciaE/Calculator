@@ -58,42 +58,60 @@ function doMath(input){
 
     }
 
+
     return solution; 
 
+}
+
+function CheckForBlock(input){
+    let temp = "";
+    temp = input.substring(0,input.length-1);
+    for(const element of temp){
+        if(element === "x" || element === "/" || element === "+" || element === "-" || element == "(")
+            return true;
+    }
+    return false;
 }
 
 document.addEventListener("DOMContentLoaded", function() {
 
     let input = "";
 
+    let block = false;
+
     const basicMath = document.querySelectorAll(".basicMath");
 
-    basicMath.forEach(function(elem){
-    elem.addEventListener("click", function() {
-            input += elem.textContent;
-            document.querySelector("#solution").textContent = input;
-        });
-    });
-   
-    const trig = document.querySelectorAll(".trig");
-
-    trig.forEach(function(elem){
-    elem.addEventListener("click", function(){
-            if(document.querySelector("#solution").textContent != "Calculator"){
-                input = elem.textContent + "(" + input + ")";
+    for(const element of basicMath){
+        element.addEventListener("click", function(){
+            if(CheckForBlock(input) == false){
+                input += element.textContent;
                 document.querySelector("#solution").textContent = input;
             }
         });
-    });
+    }
+   
+    const trig = document.querySelectorAll(".trig");
+
+    for(const element of trig){
+        element.addEventListener("click", function(){
+            if(CheckForBlock(input) == false)
+                if(document.querySelector("#solution").textContent != "Calculator"){
+                    input = element.textContent + "(" + input + ")";
+                    document.querySelector("#solution").textContent = input;
+                }
+        });
+    }
 
     document.querySelector("#equals").addEventListener("click", function(){
-            document.querySelector("#solution").textContent = doMath(input);
-            input = doMath(input).toString()
+        block = false;
+        document.querySelector("#solution").textContent = doMath(input);
+        input = doMath(input).toString()
     });
 
     document.querySelector("#clear").addEventListener("click", function(){
-            document.querySelector("#solution").textContent = "Calculator";
-            input = "";
+        block = false;
+        document.querySelector("#solution").textContent = "Calculator";
+        input = "";
     });
 
 });
